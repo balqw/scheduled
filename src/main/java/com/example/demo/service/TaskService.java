@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -79,6 +80,10 @@ public class TaskService {
 
     public void deleteTask(){
 
+    }
+
+    public List<Task> getTasksBetweenDate(LocalDateTime start, LocalDateTime end){
+        return taskRepo.getTasksByTimeIsBetween(start,end);
     }
 
 
