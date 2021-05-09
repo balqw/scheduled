@@ -13,11 +13,11 @@ import java.util.*;
 
 @Controller
 @RequestMapping("/task")
-public class TaskController {
+public class CalendarController {
     private final TaskService taskService;
 
     @Autowired
-    public TaskController(TaskService taskService) {
+    public CalendarController(TaskService taskService) {
         this.taskService = taskService;
     }
 
