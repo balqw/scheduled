@@ -17,6 +17,8 @@ const renderCalendar = () => {
         0
     ).getDate();
 
+
+
     const firstDayIndex = date.getDay();
 
     const lastDayIndex = new Date(
@@ -68,6 +70,8 @@ const renderCalendar = () => {
         monthDays.innerHTML = days;
     }
 };
+
+
 
 document.querySelector(".prev").addEventListener("click", () => {
     date.setMonth(date.getMonth() - 1);

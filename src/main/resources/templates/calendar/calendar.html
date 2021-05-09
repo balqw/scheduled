@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>calendar</title>
+    <link rel="stylesheet" href="css/minimal-table.css" />
+</head>
+<body>
+    <p th:text="${date}" >
+
+<table>
+    <tr>
+        <td>Sunday</td>
+        <td>Monday</td>
+        <td>Tuesday</td>
+        <td>Wednesday</td>
+        <td>Thursday</td>
+        <td>Friday</td>
+        <td>Saturday</td>
+    </tr>
+    <tr>
+        <td th:text="${days[0]}" ></td>
+        <td th:text="${days[1]}" ></td>
+        <td th:text="${days[2]}" ></td>
+        <td th:text="${days[3]}" ></td>
+        <td th:text="${days[4]}" ></td>
+        <td th:text="${days[5]}" ></td>
+        <td th:text="${days[6]}"></td>
+    </tr>
+    <tr>
+        <td th:text="${days[7]}"></td>
+        <td th:text="${days[8]}"></td>
+        <td th:text="${days[9]}"></td>
+        <td th:text="${days[10]}"></td>
+        <td th:text="${days[11]}"></td>
+        <td th:text="${days[12]}"></td>
+        <td th:text="${days[13]}"></td>
+    </tr>
+    <tr>
+        <td th:text="${days[14]}"></td>
+        <td th:text="${days[15]}"></td>
+        <td th:text="${days[16]}"></td>
+        <td th:text="${days[17]}"></td>
+        <td th:text="${days[18]}"></td>
+        <td th:text="${days[19]}"></td>
+        <td th:text="${days[20]}"></td>
+    </tr>
+    <tr>
+        <td th:text="${days[21]}"></td>
+        <td th:text="${days[22]}"></td>
+        <td th:text="${days[23]}"></td>
+        <td th:text="${days[24]}"></td>
+        <td th:text="${days[25]}"></td>
+        <td th:text="${days[26]}"></td>
+        <td th:text="${days[27]}"></td>
+    </tr>
+    <tr>
+        <td th:text="${days[28]}"></td>
+        <td th:text="${days[29]}"></td>
+        <td th:text="${days[30]}"></td>
+        <td th:text="${days[31]}"></td>
+        <td th:text="${days[32]}"></td>
+        <td th:text="${days[33]}"></td>
+        <td th:text="${days[34]}"></td>
+    </tr>
+    <tr>
+        <td th:text="${days[35]}"></td>
+        <td th:text="${days[36]}"></td>
+        <td th:text="${days[37]}"></td>
+        <td th:text="${days[38]}"></td>
+        <td th:text="${days[39]}"></td>
+        <td th:text="${days[40]}"></td>
+        <td th:text="${days[41]}"></td>
+    </tr>
+
+</table>
+
+
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            <li class="page-item"><a class="page-link" th:href="@{/task(y = ${years},m = ${month}-1)}" th:if="${month}-1">Previous</a></li>
+
+            <li class="page-item"><a class="page-link" th:href="@{/task(y = ${years},m = ${month}+1)}">Next</a></li>
+
+        </ul>
+    </nav>
+
+</body>
+</html>
+
