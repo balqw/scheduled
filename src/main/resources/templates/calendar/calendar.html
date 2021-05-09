@@ -163,9 +163,9 @@
 
     <nav aria-label="Page navigation example">
         <ul class="pagination">
-            <li class="page-item"><a class="page-link" th:href="@{/task(y = ${years},m = ${month}-1)}" th:if="${month}-1">Previous</a></li>
+            <li class="page-item"><a class="page-link" th:href="@{/calendar(y = ${years},m = ${month}-1)}" th:if="${month}-1">Previous</a></li>
 
-            <li class="page-item"><a class="page-link" th:href="@{/task(y = ${years},m = ${month}+1)}">Next</a></li>
+            <li class="page-item"><a class="page-link" th:href="@{/calendar(y = ${years},m = ${month}+1)}">Next</a></li>
 
         </ul>
     </nav>

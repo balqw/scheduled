@@ -2,8 +2,10 @@ package com.example.demo.service;
 
 import com.example.demo.domain.entity.Task;
 import com.example.demo.repo.TaskRepo;
+import javassist.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -20,10 +22,12 @@ public class TaskService {
         this.taskRepo = taskRepo;
     }
 
+    @Transactional
     public Task createTask(Task task){
         taskRepo.save(task);
         return task;
     }
+
 
     public List<Integer> getDaysOfMonth(LocalDate localDate){
         List<Integer>days = new ArrayList<>();
@@ -71,22 +75,19 @@ public class TaskService {
         return days;
     }
 
-
-
-
-    public Task findByDate(){
-        return null;
+    @Transactional
+    public void deleteTask(Long id){
+        taskRepo.deleteById(id);
     }
 
-    public void deleteTask(){
-
-    }
-
+    @Transactional
     public List<Task> getTasksBetweenDate(LocalDateTime start, LocalDateTime end){
         return taskRepo.getTasksByTimeIsBetween(start,end);
     }
 
-
+    public Task findTaskById(Long id){
+        return taskRepo.findById(id).orElseThrow(IllegalArgumentException::new);
+    }
 
 
 }
