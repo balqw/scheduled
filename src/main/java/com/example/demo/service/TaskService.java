@@ -1,31 +1,37 @@
 package com.example.demo.service;
 
+import com.example.demo.domain.dto.Day;
+import com.example.demo.domain.dto.TaskDto;
 import com.example.demo.domain.entity.Task;
+import com.example.demo.domain.mapper.TaskMapper;
 import com.example.demo.repo.TaskRepo;
 import javassist.NotFoundException;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class TaskService {
 
     private final TaskRepo taskRepo;
+    private final TaskMapper taskMapper;
 
-    @Autowired
-    public TaskService(TaskRepo taskRepo) {
-        this.taskRepo = taskRepo;
-    }
+
 
     @Transactional
-    public Task createTask(Task task){
+    public TaskDto createTask(TaskDto taskDto){
+        Task task = taskMapper.toTaskEntity(taskDto);
+        task.setTime(LocalDateTime.of(taskDto.getDate(),taskDto.getTaskTime()));
         taskRepo.save(task);
-        return task;
+        return taskDto;
     }
 
 

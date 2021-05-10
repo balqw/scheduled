@@ -30,14 +30,18 @@
 </div>
 
 
-<form th:action="@{/day}" th:object="${task}" th:method="post">
+<form th:action="@{/day}" th:object="${taskDto}" th:method="post">
 
     <div>
-        <label for="time" class="col-form-label"></label> <input type="datetime-local" th:field="*{time}" class="form-control"  id="time" placeholder="time">
+        <label for="time" class="col-form-label"></label> <input type="time" th:field="*{taskTime}" class="form-control"  id="time" placeholder="time">
 
         <label for="description" class="col-form-label"></label> <input type="text" th:field="*{description}" class="form-control" id="description" placeholder="description">
 
+        <label for="description" class="col-form-label"></label> <input type="text" th:field="*{date}" th:value="${taskDto.date}" class="form-control" id="date" placeholder="description" hidden="true">
+
         <input type="submit" class="btn btn-primary" value="Add Task">
+
+        <h1 th:text="${taskDto.date}"></h1>
     </div>
 
 </form>

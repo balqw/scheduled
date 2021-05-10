@@ -1,10 +1,10 @@
 package com.example.demo.controller;
 
 import com.example.demo.domain.dto.Day;
+import com.example.demo.domain.dto.TaskDto;
 import com.example.demo.domain.entity.Task;
+import com.example.demo.domain.mapper.TaskMapper;
 import com.example.demo.service.TaskService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -15,7 +15,6 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.List;
-import java.util.Map;
 
 
 @Controller
@@ -23,6 +22,7 @@ import java.util.Map;
 public class DayController {
 
     private final TaskService taskService;
+
 
     public DayController(TaskService taskService) {
         this.taskService = taskService;
@@ -38,20 +38,24 @@ public class DayController {
         List<Task>tasks = taskService.getTasksBetweenDate(start,end);
         dayDto.setYear(ld.getYear());
         dayDto.setMonth(ld.getMonth().toString());
+        dayDto.setMonthValue(ld.getMonthValue());
         dayDto.setDay(ld.getDayOfMonth());
+        TaskDto taskDto = new TaskDto();
+        taskDto.setDate(ld);
         model.addAttribute("dayDto",dayDto);
-        model.addAttribute("task", new Task());
+        model.addAttribute("taskDto", taskDto);
         model.addAttribute("tasks",tasks);
 
         return "day/index";
     }
 
     @PostMapping
-    public ModelAndView addTask(@ModelAttribute("task") Task task, ModelMap model){
-        taskService.createTask(task);
-        model.addAttribute("y",task.getTime().getYear());
-        model.addAttribute("m",task.getTime().getMonthValue());
-        model.addAttribute("d",task.getTime().getDayOfMonth());
+    public ModelAndView addTask(@ModelAttribute("taskDto") TaskDto taskDto, ModelMap model){
+        //taskDto.setDate(LocalDate.now());
+        taskService.createTask(taskDto);
+        model.addAttribute("y",taskDto.getDate().getYear());
+        model.addAttribute("m",taskDto.getDate().getMonthValue());
+        model.addAttribute("d",taskDto.getDate().getDayOfMonth());
         return new ModelAndView("redirect:/day", model);
     }
 

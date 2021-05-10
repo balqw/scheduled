@@ -9,6 +9,7 @@ import java.time.LocalTime;
 public class Day {
     Integer year;
     String month;
+    Integer monthValue;
     Integer day;
     LocalDate localDate;
     LocalTime localTime;
