@@ -11,4 +11,6 @@ public interface TaskRepo extends JpaRepository < Task, Long> {
     @Query(value = "SELECT * FROM task WHERE  time BETWEEN :s AND :e ", nativeQuery = true)
     List<Task> getTasksByTimeIsBetween(LocalDateTime s, LocalDateTime e);
 
+
+    Boolean existsTaskByTimeBetween(LocalDateTime s,LocalDateTime e);
 }

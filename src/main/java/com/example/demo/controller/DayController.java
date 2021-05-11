@@ -1,9 +1,8 @@
 package com.example.demo.controller;
 
-import com.example.demo.domain.dto.Day;
+import com.example.demo.domain.dto.DayDto;
 import com.example.demo.domain.dto.TaskDto;
 import com.example.demo.domain.entity.Task;
-import com.example.demo.domain.mapper.TaskMapper;
 import com.example.demo.service.TaskService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,15 +22,14 @@ public class DayController {
 
     private final TaskService taskService;
 
-
     public DayController(TaskService taskService) {
         this.taskService = taskService;
     }
 
     @GetMapping
-    public String day(@RequestParam("year") int year, @RequestParam("month") int month, @RequestParam("day") int day,
+    public String day(@RequestParam("year") Integer year, @RequestParam("month") Integer month, @RequestParam("day") Integer day,
                       Model model){
-        Day dayDto = new Day();
+        DayDto dayDto = new DayDto();
         LocalDate ld = LocalDate.of(year,month,day);
         LocalDateTime start = LocalDateTime.of(ld,LocalTime.of(00,00));
         LocalDateTime end = LocalDateTime.of(ld,LocalTime.of(23,59));
@@ -45,7 +43,6 @@ public class DayController {
         model.addAttribute("dayDto",dayDto);
         model.addAttribute("taskDto", taskDto);
         model.addAttribute("tasks",tasks);
-
         return "day/index";
     }
 

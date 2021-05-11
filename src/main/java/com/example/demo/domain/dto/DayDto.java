@@ -6,7 +6,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 
 @Data
-public class Day {
+public class DayDto {
     Integer year;
     String month;
     Integer monthValue;

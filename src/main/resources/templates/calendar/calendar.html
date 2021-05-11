@@ -19,142 +19,142 @@
         <td>Saturday</td>
     </tr>
     <tr>
-        <td>
-            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[0]})}" th:text="${days[0]}" >  </a>
+        <td th:style="${days.getEvent().get(0)} ? 'background-color:cyan'">
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days.getDay().get(0)})}" th:text="${days.getDay().get(0)}" >  </a>
         </td>
-        <td>
-            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[1]})}" th:text="${days[1]}" >  </a>
+        <td th:style="${days.getEvent().get(1)} ? 'background-color:cyan'">
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days.getDay().get(1)})}" th:text="${days.getDay().get(1)}" >  </a>
         </td>
-        <td>
-            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[2]})}" th:text="${days[2]}" >  </a>
+        <td th:style="${days.getEvent().get(2)} ? 'background-color:cyan'">
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days.getDay().get(2)})}" th:text="${days.getDay().get(2)}" >  </a>
         </td>
-        <td>
-            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[3]})}" th:text="${days[3]}" >  </a>
+        <td th:style="${days.getEvent().get(3)} ? 'background-color:cyan'">
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days.getDay().get(3)})}" th:text="${days.getDay().get(3)}" >  </a>
         </td>
-        <td>
-            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[4]})}" th:text="${days[4]}" >  </a>
+        <td th:style="${days.getEvent().get(4)} ? 'background-color:cyan'">
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days.getDay().get(4)})}" th:text="${days.getDay().get(4)}" >  </a>
         </td>
-        <td>
-            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[5]})}" th:text="${days[5]}" >  </a>
+        <td th:style="${days.getEvent().get(5)} ? 'background-color:cyan'">
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days.getDay().get(5)})}" th:text="${days.getDay().get(5)}" >  </a>
         </td>
-        <td >
-            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[6]})}" th:text="${days[6]}" >  </a>
+        <td th:style="${days.getEvent().get(6)} ? 'background-color:cyan'">
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days.getDay().get(6)})}" th:text="${days.getDay().get(6)}" >  </a>
         </td>
     </tr>
 
     <tr>
-        <td>
-            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[7]})}" th:text="${days[7]}" >  </a>
+        <td th:style="${days.getEvent().get(7)} ? 'background-color:cyan'">
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days.getDay().get(7)})}" th:text="${days.getDay().get(7)}" >  </a>
         </td>
-        <td>
-            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[8]})}" th:text="${days[8]}" >  </a>
+        <td th:style="${days.getEvent().get(8)} ? 'background-color:cyan'">
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days.getDay().get(8)})}" th:text="${days.getDay().get(8)}" >  </a>
         </td>
-        <td>
-            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[9]})}" th:text="${days[9]}" >  </a>
+        <td th:style="${days.getEvent().get(9)} ? 'background-color:cyan'">
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days.getDay().get(9)})}" th:text="${days.getDay().get(9)}" >  </a>
         </td>
-        <td>
-            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[10]})}" th:text="${days[10]}" >  </a>
+        <td th:style="${days.getEvent().get(10)} ? 'background-color:cyan'">
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days.getDay().get(10)})}" th:text="${days.getDay().get(10)}" >  </a>
         </td>
-        <td>
-            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[11]})}" th:text="${days[11]}" >  </a>
+        <td th:style="${days.getEvent().get(11)} ? 'background-color:cyan'">
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days.getDay().get(11)})}" th:text="${days.getDay().get(11)}" >  </a>
         </td>
-        <td>
-            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[12]})}" th:text="${days[12]}" >  </a>
+        <td th:style="${days.getEvent().get(12)} ? 'background-color:cyan'">
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days.getDay().get(12)})}" th:text="${days.getDay().get(12)}" >  </a>
         </td>
-        <td >
-            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[13]})}" th:text="${days[13]}" >  </a>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[14]})}" th:text="${days[14]}" >  </a>
-        </td>
-        <td>
-            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[15]})}" th:text="${days[15]}" >  </a>
-        </td>
-        <td>
-            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[16]})}" th:text="${days[16]}" >  </a>
-        </td>
-        <td>
-            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[17]})}" th:text="${days[17]}" >  </a>
-        </td>
-        <td>
-            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[18]})}" th:text="${days[18]}" >  </a>
-        </td>
-        <td>
-            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[19]})}" th:text="${days[19]}" >  </a>
-        </td>
-        <td >
-            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[20]})}" th:text="${days[20]}" >  </a>
+        <td th:style="${days.getEvent().get(13)} ? 'background-color:cyan'">
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days.getDay().get(13)})}" th:text="${days.getDay().get(13)}" >  </a>
         </td>
     </tr>
     <tr>
-        <td>
-            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[21]})}" th:text="${days[21]}" >  </a>
+        <td th:style="${days.getEvent().get(14)} ? 'background-color:cyan'">
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days.getDay().get(14)})}" th:text="${days.getDay().get(14)}" >  </a>
         </td>
-        <td>
-            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[22]})}" th:text="${days[22]}" >  </a>
+        <td th:style="${days.getEvent().get(15)} ? 'background-color:cyan'">
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days.getDay().get(15)})}" th:text="${days.getDay().get(15)}" >  </a>
         </td>
-        <td>
-            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[23]})}" th:text="${days[23]}" >  </a>
+        <td th:style="${days.getEvent().get(16)} ? 'background-color:cyan'">
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days.getDay().get(16)})}" th:text="${days.getDay().get(16)}" >  </a>
         </td>
-        <td>
-            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[24]})}" th:text="${days[24]}" >  </a>
+        <td th:style="${days.getEvent().get(17)} ? 'background-color:cyan'">
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days.getDay().get(17)})}" th:text="${days.getDay().get(17)}" >  </a>
         </td>
-        <td>
-            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[25]})}" th:text="${days[25]}" >  </a>
+        <td th:style="${days.getEvent().get(18)} ? 'background-color:cyan'">
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days.getDay().get(18)})}" th:text="${days.getDay().get(18)}" >  </a>
         </td>
-        <td>
-            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[26]})}" th:text="${days[26]}" >  </a>
+        <td th:style="${days.getEvent().get(19)} ? 'background-color:cyan'">
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days.getDay().get(19)})}" th:text="${days.getDay().get(19)}" >  </a>
         </td>
-        <td >
-            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[27]})}" th:text="${days[27]}" >  </a>
+        <td th:style="${days.getEvent().get(20)} ? 'background-color:cyan'">
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days.getDay().get(20)})}" th:text="${days.getDay().get(20)}" >  </a>
         </td>
     </tr>
     <tr>
-        <td>
-            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[28]})}" th:text="${days[28]}" >  </a>
+        <td th:style="${days.getEvent().get(21)} ? 'background-color:cyan'">
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days.getDay().get(21)})}" th:text="${days.getDay().get(21)}" >  </a>
         </td>
-        <td>
-            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[29]})}" th:text="${days[29]}" >  </a>
+        <td th:style="${days.getEvent().get(22)} ? 'background-color:cyan'">
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days.getDay().get(22)})}" th:text="${days.getDay().get(22)}" >  </a>
         </td>
-        <td>
-            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[30]})}" th:text="${days[30]}" >  </a>
+        <td th:style="${days.getEvent().get(23)} ? 'background-color:cyan'">
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days.getDay().get(23)})}" th:text="${days.getDay().get(23)}" >  </a>
         </td>
-        <td>
-            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[31]})}" th:text="${days[31]}" >  </a>
+        <td th:style="${days.getEvent().get(24)} ? 'background-color:cyan'">
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days.getDay().get(24)})}" th:text="${days.getDay().get(24)}" >  </a>
         </td>
-        <td>
-            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[32]})}" th:text="${days[32]}" >  </a>
+        <td th:style="${days.getEvent().get(25)} ? 'background-color:cyan'">
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days.getDay().get(25)})}" th:text="${days.getDay().get(25)}" >  </a>
         </td>
-        <td>
-            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[33]})}" th:text="${days[33]}" >  </a>
+        <td th:style="${days.getEvent().get(26)} ? 'background-color:cyan'">
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days.getDay().get(26)})}" th:text="${days.getDay().get(26)}" >  </a>
         </td>
-        <td>
-            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[34]})}" th:text="${days[34]}" >  </a>
+        <td th:style="${days.getEvent().get(27)} ? 'background-color:cyan'">
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days.getDay().get(27)})}" th:text="${days.getDay().get(27)}" >  </a>
+        </td>
+    </tr>
+    <tr>
+        <td th:style="${days.getEvent().get(28)} ? 'background-color:cyan'">
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days.getDay().get(28)})}" th:text="${days.getDay().get(28)}" >  </a>
+        </td>
+        <td th:style="${days.getEvent().get(29)} ? 'background-color:cyan'">
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days.getDay().get(29)})}" th:text="${days.getDay().get(29)}" >  </a>
+        </td>
+        <td th:style="${days.getEvent().get(30)} ? 'background-color:cyan'">
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days.getDay().get(30)})}" th:text="${days.getDay().get(30)}" >  </a>
+        </td>
+        <td th:style="${days.getEvent().get(31)} ? 'background-color:cyan'">
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days.getDay().get(31)})}" th:text="${days.getDay().get(31)}" >  </a>
+        </td>
+        <td th:style="${days.getEvent().get(32)} ? 'background-color:cyan'">
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days.getDay().get(32)})}" th:text="${days.getDay().get(32)}" >  </a>
+        </td>
+        <td th:style="${days.getEvent().get(33)} ? 'background-color:cyan'">
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days.getDay().get(33)})}" th:text="${days.getDay().get(33)}" >  </a>
+        </td>
+        <td th:style="${days.getEvent().get(34)} ? 'background-color:cyan'">
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days.getDay().get(34)})}" th:text="${days.getDay().get(34)}" >  </a>
         </td>
     </tr>
         <tr>
-            <td>
-                <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[35]})}" th:text="${days[35]}" >  </a>
+            <td th:style="${days.getEvent().get(35)} ? 'background-color:cyan'">
+                <a th:href="@{/day(year = ${year},month = ${month}, day = ${days.getDay().get(35)})}" th:text="${days.getDay().get(35)}" >  </a>
             </td>
-            <td>
-                <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[36]})}" th:text="${days[36]}" >  </a>
+            <td th:style="${days.getEvent().get(36)} ? 'background-color:cyan'">
+                <a th:href="@{/day(year = ${year},month = ${month}, day = ${days.getDay().get(36)})}" th:text="${days.getDay().get(36)}" >  </a>
             </td>
-            <td>
-                <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[37]})}" th:text="${days[37]}" >  </a>
+            <td th:style="${days.getEvent().get(37)} ? 'background-color:cyan'">
+                <a th:href="@{/day(year = ${year},month = ${month}, day = ${days.getDay().get(37)})}" th:text="${days.getDay().get(37)}" >  </a>
             </td>
-            <td>
-                <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[38]})}" th:text="${days[38]}" >  </a>
+            <td th:style="${days.getEvent().get(38)} ? 'background-color:cyan'">
+                <a th:href="@{/day(year = ${year},month = ${month}, day = ${days.getDay().get(38)})}" th:text="${days.getDay().get(38)}" >  </a>
             </td>
-            <td>
-                <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[39]})}" th:text="${days[39]}" >  </a>
+            <td th:style="${days.getEvent().get(39)} ? 'background-color:cyan'">
+                <a th:href="@{/day(year = ${year},month = ${month}, day = ${days.getDay().get(39)})}" th:text="${days.getDay().get(39)}" >  </a>
             </td>
-            <td>
-                <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[40]})}" th:text="${days[40]}" >  </a>
+            <td th:style="${days.getEvent().get(40)} ? 'background-color:cyan'">
+                <a th:href="@{/day(year = ${year},month = ${month}, day = ${days.getDay().get(40)})}" th:text="${days.getDay().get(40)}" >  </a>
             </td>
-            <td >
-                <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[41]})}" th:text="${days[41]}" >  </a>
+            <td th:style="${days.getEvent().get(41)} ? 'background-color:cyan'">
+                <a th:href="@{/day(year = ${year},month = ${month}, day = ${days.getDay().get(41)})}" th:text="${days.getDay().get(41)}" >  </a>
             </td>
         </tr>
 
