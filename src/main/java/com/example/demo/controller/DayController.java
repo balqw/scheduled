@@ -29,7 +29,7 @@ public class DayController {
     }
 
     @GetMapping
-    public String day(@RequestParam("y") int year, @RequestParam("m") int month, @RequestParam("d") int day,
+    public String day(@RequestParam("year") int year, @RequestParam("month") int month, @RequestParam("day") int day,
                       Model model){
         Day dayDto = new Day();
         LocalDate ld = LocalDate.of(year,month,day);
@@ -51,11 +51,11 @@ public class DayController {
 
     @PostMapping
     public ModelAndView addTask(@ModelAttribute("taskDto") TaskDto taskDto, ModelMap model){
-        //taskDto.setDate(LocalDate.now());
+
         taskService.createTask(taskDto);
-        model.addAttribute("y",taskDto.getDate().getYear());
-        model.addAttribute("m",taskDto.getDate().getMonthValue());
-        model.addAttribute("d",taskDto.getDate().getDayOfMonth());
+        model.addAttribute("year",taskDto.getDate().getYear());
+        model.addAttribute("month",taskDto.getDate().getMonthValue());
+        model.addAttribute("day",taskDto.getDate().getDayOfMonth());
         return new ModelAndView("redirect:/day", model);
     }
 
@@ -63,9 +63,9 @@ public class DayController {
     public ModelAndView deleteTask(@PathVariable("id") Long id, ModelMap model){
         Task task = taskService.findTaskById(id);
         taskService.deleteTask(id);
-        model.addAttribute("y",task.getTime().getYear());
-        model.addAttribute("m",task.getTime().getMonthValue());
-        model.addAttribute("d",task.getTime().getDayOfMonth());
+        model.addAttribute("year",task.getTime().getYear());
+        model.addAttribute("month",task.getTime().getMonthValue());
+        model.addAttribute("day",task.getTime().getDayOfMonth());
         return new ModelAndView("redirect:/day", model);
     }
 

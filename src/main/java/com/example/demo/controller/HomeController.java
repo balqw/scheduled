@@ -17,8 +17,8 @@ public class HomeController {
     @GetMapping()
     public ModelAndView getCalendar(ModelMap model){
         LocalDateTime localDate = LocalDateTime.now();
-        model.addAttribute("y",localDate.getYear());
-        model.addAttribute("m",localDate.getMonthValue());
+        model.addAttribute("year",localDate.getYear());
+        model.addAttribute("month",localDate.getMonthValue());
         return new ModelAndView("redirect:/calendar", model);
     }
 }

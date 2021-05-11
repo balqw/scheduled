@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/minimal-table.css" />
 </head>
 <body>
-    <p th:text="${date}" >
+    <p th:text="${calendarDate.getMonth()+'     '+calendarDate.getYear()}" >
 
 <table>
     <tr>
@@ -20,141 +20,141 @@
     </tr>
     <tr>
         <td>
-            <a th:href="@{/day(y = ${years},m = ${month}, d = ${days[0]})}" th:text="${days[0]}" >  </a>
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[0]})}" th:text="${days[0]}" >  </a>
         </td>
         <td>
-            <a th:href="@{/day(y = ${years},m = ${month}, d = ${days[1]})}" th:text="${days[1]}" >  </a>
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[1]})}" th:text="${days[1]}" >  </a>
         </td>
         <td>
-            <a th:href="@{/day(y = ${years},m = ${month}, d = ${days[2]})}" th:text="${days[2]}" >  </a>
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[2]})}" th:text="${days[2]}" >  </a>
         </td>
         <td>
-            <a th:href="@{/day(y = ${years},m = ${month}, d = ${days[3]})}" th:text="${days[3]}" >  </a>
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[3]})}" th:text="${days[3]}" >  </a>
         </td>
         <td>
-            <a th:href="@{/day(y = ${years},m = ${month}, d = ${days[4]})}" th:text="${days[4]}" >  </a>
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[4]})}" th:text="${days[4]}" >  </a>
         </td>
         <td>
-            <a th:href="@{/day(y = ${years},m = ${month}, d = ${days[5]})}" th:text="${days[5]}" >  </a>
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[5]})}" th:text="${days[5]}" >  </a>
         </td>
         <td >
-            <a th:href="@{/day(y = ${years},m = ${month}, d = ${days[6]})}" th:text="${days[6]}" >  </a>
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[6]})}" th:text="${days[6]}" >  </a>
         </td>
     </tr>
 
     <tr>
         <td>
-            <a th:href="@{/day(y = ${years},m = ${month}, d = ${days[7]})}" th:text="${days[7]}" >  </a>
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[7]})}" th:text="${days[7]}" >  </a>
         </td>
         <td>
-            <a th:href="@{/day(y = ${years},m = ${month}, d = ${days[8]})}" th:text="${days[8]}" >  </a>
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[8]})}" th:text="${days[8]}" >  </a>
         </td>
         <td>
-            <a th:href="@{/day(y = ${years},m = ${month}, d = ${days[9]})}" th:text="${days[9]}" >  </a>
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[9]})}" th:text="${days[9]}" >  </a>
         </td>
         <td>
-            <a th:href="@{/day(y = ${years},m = ${month}, d = ${days[10]})}" th:text="${days[10]}" >  </a>
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[10]})}" th:text="${days[10]}" >  </a>
         </td>
         <td>
-            <a th:href="@{/day(y = ${years},m = ${month}, d = ${days[11]})}" th:text="${days[11]}" >  </a>
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[11]})}" th:text="${days[11]}" >  </a>
         </td>
         <td>
-            <a th:href="@{/day(y = ${years},m = ${month}, d = ${days[12]})}" th:text="${days[12]}" >  </a>
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[12]})}" th:text="${days[12]}" >  </a>
         </td>
         <td >
-            <a th:href="@{/day(y = ${years},m = ${month}, d = ${days[13]})}" th:text="${days[13]}" >  </a>
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[13]})}" th:text="${days[13]}" >  </a>
         </td>
     </tr>
     <tr>
         <td>
-            <a th:href="@{/day(y = ${years},m = ${month}, d = ${days[14]})}" th:text="${days[14]}" >  </a>
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[14]})}" th:text="${days[14]}" >  </a>
         </td>
         <td>
-            <a th:href="@{/day(y = ${years},m = ${month}, d = ${days[15]})}" th:text="${days[15]}" >  </a>
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[15]})}" th:text="${days[15]}" >  </a>
         </td>
         <td>
-            <a th:href="@{/day(y = ${years},m = ${month}, d = ${days[16]})}" th:text="${days[16]}" >  </a>
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[16]})}" th:text="${days[16]}" >  </a>
         </td>
         <td>
-            <a th:href="@{/day(y = ${years},m = ${month}, d = ${days[17]})}" th:text="${days[17]}" >  </a>
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[17]})}" th:text="${days[17]}" >  </a>
         </td>
         <td>
-            <a th:href="@{/day(y = ${years},m = ${month}, d = ${days[18]})}" th:text="${days[18]}" >  </a>
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[18]})}" th:text="${days[18]}" >  </a>
         </td>
         <td>
-            <a th:href="@{/day(y = ${years},m = ${month}, d = ${days[19]})}" th:text="${days[19]}" >  </a>
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[19]})}" th:text="${days[19]}" >  </a>
         </td>
         <td >
-            <a th:href="@{/day(y = ${years},m = ${month}, d = ${days[20]})}" th:text="${days[20]}" >  </a>
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[20]})}" th:text="${days[20]}" >  </a>
         </td>
     </tr>
     <tr>
         <td>
-            <a th:href="@{/day(y = ${years},m = ${month}, d = ${days[21]})}" th:text="${days[21]}" >  </a>
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[21]})}" th:text="${days[21]}" >  </a>
         </td>
         <td>
-            <a th:href="@{/day(y = ${years},m = ${month}, d = ${days[22]})}" th:text="${days[22]}" >  </a>
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[22]})}" th:text="${days[22]}" >  </a>
         </td>
         <td>
-            <a th:href="@{/day(y = ${years},m = ${month}, d = ${days[23]})}" th:text="${days[23]}" >  </a>
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[23]})}" th:text="${days[23]}" >  </a>
         </td>
         <td>
-            <a th:href="@{/day(y = ${years},m = ${month}, d = ${days[24]})}" th:text="${days[24]}" >  </a>
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[24]})}" th:text="${days[24]}" >  </a>
         </td>
         <td>
-            <a th:href="@{/day(y = ${years},m = ${month}, d = ${days[25]})}" th:text="${days[25]}" >  </a>
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[25]})}" th:text="${days[25]}" >  </a>
         </td>
         <td>
-            <a th:href="@{/day(y = ${years},m = ${month}, d = ${days[26]})}" th:text="${days[26]}" >  </a>
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[26]})}" th:text="${days[26]}" >  </a>
         </td>
         <td >
-            <a th:href="@{/day(y = ${years},m = ${month}, d = ${days[27]})}" th:text="${days[27]}" >  </a>
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[27]})}" th:text="${days[27]}" >  </a>
         </td>
     </tr>
     <tr>
         <td>
-            <a th:href="@{/day(y = ${years},m = ${month}, d = ${days[28]})}" th:text="${days[28]}" >  </a>
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[28]})}" th:text="${days[28]}" >  </a>
         </td>
         <td>
-            <a th:href="@{/day(y = ${years},m = ${month}, d = ${days[29]})}" th:text="${days[29]}" >  </a>
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[29]})}" th:text="${days[29]}" >  </a>
         </td>
         <td>
-            <a th:href="@{/day(y = ${years},m = ${month}, d = ${days[30]})}" th:text="${days[30]}" >  </a>
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[30]})}" th:text="${days[30]}" >  </a>
         </td>
         <td>
-            <a th:href="@{/day(y = ${years},m = ${month}, d = ${days[31]})}" th:text="${days[31]}" >  </a>
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[31]})}" th:text="${days[31]}" >  </a>
         </td>
         <td>
-            <a th:href="@{/day(y = ${years},m = ${month}, d = ${days[32]})}" th:text="${days[32]}" >  </a>
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[32]})}" th:text="${days[32]}" >  </a>
         </td>
         <td>
-            <a th:href="@{/day(y = ${years},m = ${month}, d = ${days[33]})}" th:text="${days[33]}" >  </a>
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[33]})}" th:text="${days[33]}" >  </a>
         </td>
-        <td >
-            <a th:href="@{/day(y = ${years},m = ${month}, d = ${days[34]})}" th:text="${days[34]}" >  </a>
+        <td>
+            <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[34]})}" th:text="${days[34]}" >  </a>
         </td>
     </tr>
         <tr>
             <td>
-                <a th:href="@{/day(y = ${years},m = ${month}, d = ${days[35]})}" th:text="${days[35]}" >  </a>
+                <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[35]})}" th:text="${days[35]}" >  </a>
             </td>
             <td>
-                <a th:href="@{/day(y = ${years},m = ${month}, d = ${days[36]})}" th:text="${days[36]}" >  </a>
+                <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[36]})}" th:text="${days[36]}" >  </a>
             </td>
             <td>
-                <a th:href="@{/day(y = ${years},m = ${month}, d = ${days[37]})}" th:text="${days[37]}" >  </a>
+                <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[37]})}" th:text="${days[37]}" >  </a>
             </td>
             <td>
-                <a th:href="@{/day(y = ${years},m = ${month}, d = ${days[38]})}" th:text="${days[38]}" >  </a>
+                <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[38]})}" th:text="${days[38]}" >  </a>
             </td>
             <td>
-                <a th:href="@{/day(y = ${years},m = ${month}, d = ${days[39]})}" th:text="${days[39]}" >  </a>
+                <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[39]})}" th:text="${days[39]}" >  </a>
             </td>
             <td>
-                <a th:href="@{/day(y = ${years},m = ${month}, d = ${days[40]})}" th:text="${days[40]}" >  </a>
+                <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[40]})}" th:text="${days[40]}" >  </a>
             </td>
             <td >
-                <a th:href="@{/day(y = ${years},m = ${month}, d = ${days[41]})}" th:text="${days[41]}" >  </a>
+                <a th:href="@{/day(year = ${year},month = ${month}, day = ${days[41]})}" th:text="${days[41]}" >  </a>
             </td>
         </tr>
 
@@ -163,9 +163,9 @@
 
     <nav aria-label="Page navigation example">
         <ul class="pagination">
-            <li  class="page-item-prev"><a class="page-link" th:href="@{/calendar(y = ${years},m = ${month}-1)}">Previous</a></li>
+            <li  class="page-item-prev"><a class="page-link" th:href="@{/calendar(year = ${year},month = ${month}-1)}">Previous</a></li>
 
-            <li class="page-item-next"><a class="page-link" th:href="@{/calendar(y = ${years},m = ${month}+1)}">Next</a></li>
+            <li class="page-item-next"><a class="page-link" th:href="@{/calendar(year = ${year},month = ${month}+1)}">Next</a></li>
 
         </ul>
     </nav>
