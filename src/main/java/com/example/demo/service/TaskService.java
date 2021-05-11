@@ -1,9 +1,9 @@
 package com.example.demo.service;
 
-import com.example.demo.domain.dto.TaskDto;
-import com.example.demo.domain.entity.Task;
-import com.example.demo.domain.mapper.TaskMapper;
-import com.example.demo.repo.TaskRepo;
+import com.example.demo.model.dto.TaskDto;
+import com.example.demo.model.entity.Task;
+import com.example.demo.model.mapper.TaskMapper;
+import com.example.demo.repository.TaskRepo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

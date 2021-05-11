@@ -1,4 +1,4 @@
-package com.example.demo.domain.dto;
+package com.example.demo.model.dto;
 
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;

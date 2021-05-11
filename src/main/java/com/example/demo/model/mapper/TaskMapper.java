@@ -1,7 +1,7 @@
-package com.example.demo.domain.mapper;
+package com.example.demo.model.mapper;
 
-import com.example.demo.domain.dto.TaskDto;
-import com.example.demo.domain.entity.Task;
+import com.example.demo.model.dto.TaskDto;
+import com.example.demo.model.entity.Task;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")

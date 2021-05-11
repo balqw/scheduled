@@ -1,6 +1,6 @@
-package com.example.demo.repo;
+package com.example.demo.repository;
 
-import com.example.demo.domain.entity.Task;
+import com.example.demo.model.entity.Task;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

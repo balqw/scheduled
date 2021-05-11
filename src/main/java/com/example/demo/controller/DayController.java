@@ -1,8 +1,8 @@
 package com.example.demo.controller;
 
-import com.example.demo.domain.dto.DayInfo;
-import com.example.demo.domain.dto.TaskDto;
-import com.example.demo.domain.entity.Task;
+import com.example.demo.model.dto.DayInfo;
+import com.example.demo.model.dto.TaskDto;
+import com.example.demo.model.entity.Task;
 import com.example.demo.service.TaskService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

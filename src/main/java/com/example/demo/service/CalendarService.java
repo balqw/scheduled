@@ -1,7 +1,6 @@
 package com.example.demo.service;
 
-import com.example.demo.domain.dto.Days;
-
+import com.example.demo.model.dto.Days;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -17,13 +16,15 @@ public class CalendarService {
 
     private final TaskService taskService;
 
-    public LocalDate getCalendarDate(Integer year, Integer month) {
-        if (month > 12) {
-            return LocalDate.of(year + 1, 1, 1);
-        } else if (month < 1) {
-            return LocalDate.of(year - 1, 12, 1);
+
+    public LocalDate getCalendarDate(Integer year, Integer month){
+        if (month>12) {
+            return LocalDate.of(year, 12, 1).plusMonths(1);
         }
-        return LocalDate.of(year, month, 1);
+        else if (month<1) {
+            return LocalDate.of(year, 1, 1).minusMonths(1);
+        }
+        return LocalDate.of(year,month,1);
     }
 
     public Days getDaysOfMonth(LocalDate localDate) {
@@ -34,50 +35,23 @@ public class CalendarService {
 
         Days daysDto = new Days();
 
-        int emptyDays = 0;
-
-        switch (localDate.getDayOfWeek().toString()) {
-            case ("MONDAY"):
-                emptyDays = 1;
-                break;
-            case ("TUESDAY"):
-                emptyDays = 2;
-                break;
-            case ("WEDNESDAY"):
-                emptyDays = 3;
-                break;
-            case ("THURSDAY"):
-                emptyDays = 4;
-                break;
-            case ("FRIDAY"):
-                emptyDays = 5;
-                break;
-            case ("SATURDAY"):
-                emptyDays = 6;
-                break;
-            case ("SUNDAY"):
-                emptyDays = 0;
-                break;
-        }
-
+        int emptyDays = localDate.getDayOfWeek().getValue();
         int day = 1;
+
         for (int i = 0; i < 42; i++) {
 
-            if (emptyDays >0) {
+            if (emptyDays >1) {
                 days.add(null);
                 event.add(false);
                 emptyDays--;
-            } else if (emptyDays <= 0 & day <= localDate.lengthOfMonth()) {
+            } else if (day <= localDate.lengthOfMonth()) {
                 days.add(day);
                 day++;
-                if (taskService.existTask(start, end)) {
-                    event.add(true);
+                event.add(taskService.existTask(start, end));
 
-                } else {
-                    event.add(false);
-                }
                 start = start.plusDays(1);
                 end = end.plusDays(1);
+
             } else {
                 days.add(null);
                 event.add(false);
@@ -87,4 +61,6 @@ public class CalendarService {
         daysDto.setEvent(event);
         return daysDto;
     }
+
+
 }
