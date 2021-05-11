@@ -25,6 +25,9 @@
         <td th:text="${ts.getDescription()}"></td>
         <td><a th:href="@{day/{id}/delete(id=${ts.getId()})}"><i class="fas fa-trash-alt"></i></a></td>
     </tr>
+
+
+
     </tbody>
 </table>
 </div>
@@ -44,6 +47,8 @@
     </div>
 
 </form>
-
+<div>
+    <a class="page-link" th:href="@{/calendar(year = ${dayDto.getYear()},month = ${dayDto.getMonthValue()})}">Back</a>
+</div>
 </body>
 </html>
