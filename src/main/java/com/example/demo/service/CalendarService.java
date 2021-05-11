@@ -1,8 +1,10 @@
 package com.example.demo.service;
+
 import com.example.demo.domain.dto.Days;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -14,26 +16,27 @@ import java.util.List;
 public class CalendarService {
 
     private final TaskService taskService;
-    public LocalDate getCalendarDate(Integer year, Integer month){
-        if(month>12){
-            return LocalDate.of(year+1,1,1);
-        }else if (month<1){
-            return LocalDate.of(year-1,12,1);
+
+    public LocalDate getCalendarDate(Integer year, Integer month) {
+        if (month > 12) {
+            return LocalDate.of(year + 1, 1, 1);
+        } else if (month < 1) {
+            return LocalDate.of(year - 1, 12, 1);
         }
-         return LocalDate.of(year,month,1);
+        return LocalDate.of(year, month, 1);
     }
 
-    public Days getDaysOfMonth(LocalDate localDate){
-        List<Integer>days = new ArrayList<>();
+    public Days getDaysOfMonth(LocalDate localDate) {
+        List<Integer> days = new ArrayList<>();
         LocalDateTime start = LocalDateTime.of(localDate, LocalTime.of(0, 0));
         LocalDateTime end = LocalDateTime.of(localDate, LocalTime.of(23, 59));
-        List<Boolean>event = new ArrayList<>();
+        List<Boolean> event = new ArrayList<>();
 
         Days daysDto = new Days();
-        String srt  = String.valueOf(localDate.getDayOfWeek());
+
         int emptyDays = 0;
 
-        switch (srt){
+        switch (localDate.getDayOfWeek().toString()) {
             case ("MONDAY"):
                 emptyDays = 1;
                 break;
@@ -57,27 +60,29 @@ public class CalendarService {
                 break;
         }
 
-        int daysOfMonth = localDate.lengthOfMonth();
+        int day = 1;
+        for (int i = 0; i < 42; i++) {
 
-        for(int i = 0; i < emptyDays; i++){
-            days.add(null);
-            event.add(false);
-        }
-        for(int i=1; i < (daysOfMonth+1) ;i++) {
-            days.add(i);
-            if (taskService.existTask(start, end)) {
-                event.add(true);
+            if (emptyDays >0) {
+                days.add(null);
+                event.add(false);
+                emptyDays--;
+            } else if (emptyDays <= 0 & day <= localDate.lengthOfMonth()) {
+                days.add(day);
+                day++;
+                if (taskService.existTask(start, end)) {
+                    event.add(true);
+
+                } else {
+                    event.add(false);
+                }
+                start = start.plusDays(1);
+                end = end.plusDays(1);
             } else {
+                days.add(null);
                 event.add(false);
             }
-            start = start.plusDays(1);
-            end = end.plusDays(1);
         }
-        for (int i = 0; i < 45; i++){
-            days.add(null);
-            event.add(false);
-        }
-
         daysDto.setDay(days);
         daysDto.setEvent(event);
         return daysDto;
