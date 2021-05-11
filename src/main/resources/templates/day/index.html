@@ -8,7 +8,7 @@
 </head>
 <body>
 <div class="container">
-    <p th:text="${dayDto.getDay() + '   '+dayDto.getMonth()+ '   '+dayDto.getYear()}" >
+    <p th:text="${dayInfo.getDay() + '   '+dayInfo.getMonth()+ '   '+dayInfo.getYear()}" >
 </div>
 <div>
 <table class="table table-striped table-responsive-md">
@@ -36,7 +36,7 @@
 <form th:action="@{/day}" th:object="${taskDto}" th:method="post">
 
     <div>
-        <label for="time" class="col-form-label"></label> <input type="time" th:field="*{taskTime}" class="form-control"  id="time" placeholder="time">
+        <label for="time" class="col-form-label"></label> <input type="time" step="1800" th:field="*{taskTime}" class="form-control"  id="time" placeholder="time">
 
         <label for="description" class="col-form-label"></label> <input type="text" th:field="*{description}" class="form-control" id="description" placeholder="description">
 
@@ -48,7 +48,7 @@
 
 </form>
 <div>
-    <a class="page-link" th:href="@{/calendar(year = ${dayDto.getYear()},month = ${dayDto.getMonthValue()})}">Back</a>
+    <a class="page-link" th:href="@{/calendar(year = ${dayInfo.getYear()},month = ${dayInfo.getMonthValue()})}">Back</a>
 </div>
 </body>
 </html>

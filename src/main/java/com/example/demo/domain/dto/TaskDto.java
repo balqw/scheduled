@@ -9,12 +9,12 @@ import java.time.LocalTime;
 
 @Data
 public class TaskDto {
-    public Long id;
-    public String description;
+    private Long id;
+    private String description;
     @DateTimeFormat(iso = DateTimeFormat.ISO.TIME)
-    public LocalTime taskTime;
+    private LocalTime taskTime;
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
-    public LocalDate date;
+    private LocalDate date;
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
-    public LocalDateTime localDateTime;
+    private LocalDateTime localDateTime;
 }

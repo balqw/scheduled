@@ -11,9 +11,9 @@ import java.time.LocalDateTime;
 public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    public Long id;
-    public String description;
+    private Long id;
+    private String description;
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
-    public LocalDateTime time;
+    private LocalDateTime time;
 
 }

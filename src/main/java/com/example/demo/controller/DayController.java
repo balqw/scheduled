@@ -1,6 +1,6 @@
 package com.example.demo.controller;
 
-import com.example.demo.domain.dto.DayDto;
+import com.example.demo.domain.dto.DayInfo;
 import com.example.demo.domain.dto.TaskDto;
 import com.example.demo.domain.entity.Task;
 import com.example.demo.service.TaskService;
@@ -29,18 +29,18 @@ public class DayController {
     @GetMapping
     public String day(@RequestParam("year") Integer year, @RequestParam("month") Integer month, @RequestParam("day") Integer day,
                       Model model){
-        DayDto dayDto = new DayDto();
+        DayInfo dayInfo = new DayInfo();
         LocalDate ld = LocalDate.of(year,month,day);
         LocalDateTime start = LocalDateTime.of(ld,LocalTime.of(00,00));
         LocalDateTime end = LocalDateTime.of(ld,LocalTime.of(23,59));
         List<Task>tasks = taskService.getTasksBetweenDate(start,end);
-        dayDto.setYear(ld.getYear());
-        dayDto.setMonth(ld.getMonth().toString());
-        dayDto.setMonthValue(ld.getMonthValue());
-        dayDto.setDay(ld.getDayOfMonth());
+        dayInfo.setYear(ld.getYear());
+        dayInfo.setMonth(ld.getMonth().toString());
+        dayInfo.setMonthValue(ld.getMonthValue());
+        dayInfo.setDay(ld.getDayOfMonth());
         TaskDto taskDto = new TaskDto();
         taskDto.setDate(ld);
-        model.addAttribute("dayDto",dayDto);
+        model.addAttribute("dayInfo", dayInfo);
         model.addAttribute("taskDto", taskDto);
         model.addAttribute("tasks",tasks);
         return "day/index";
