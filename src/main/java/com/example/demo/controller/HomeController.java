@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @RequestMapping("/")
 public class HomeController {
 
-    @ResponseStatus(HttpStatus.OK)
+
     @GetMapping()
     public ModelAndView getCalendar(ModelMap model){
         LocalDateTime localDate = LocalDateTime.now();

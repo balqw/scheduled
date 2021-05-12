@@ -28,7 +28,7 @@ public class DayController {
     }
 
     @GetMapping
-    @ResponseStatus(HttpStatus.OK)
+
     public String day(@RequestParam("year") Integer year, @RequestParam("month") Integer month, @RequestParam("day") Integer day,
                       Model model){
         DayInfo dayInfo = new DayInfo();
@@ -49,7 +49,6 @@ public class DayController {
     }
 
     @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
     public ModelAndView addTask(@ModelAttribute("taskDto") TaskDto taskDto, ModelMap model){
 
         taskService.createTask(taskDto);
@@ -60,7 +59,6 @@ public class DayController {
     }
 
     @GetMapping("{id}/delete")
-    @ResponseStatus(HttpStatus.ACCEPTED)
     public ModelAndView deleteTask(@PathVariable("id") Long id, ModelMap model){
         Task task = taskService.findTaskById(id);
         taskService.deleteTask(id);

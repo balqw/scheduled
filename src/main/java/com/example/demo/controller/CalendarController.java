@@ -21,7 +21,6 @@ public class CalendarController {
 
     
     @GetMapping()
-    @ResponseStatus(HttpStatus.OK)
     public String getCalendar(@RequestParam("year")  Integer year, @RequestParam("month") Integer month, Model model){
           LocalDate date = calendarService.getCalendarDate(year,month);
           Days days = calendarService.getDaysOfMonth(date);
