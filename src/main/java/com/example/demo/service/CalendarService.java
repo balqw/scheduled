@@ -8,6 +8,7 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -15,14 +16,14 @@ public class CalendarService {
 
     private final TaskService taskService;
 
-    public LocalDate getCalendarDate(Integer year, Integer month) {
-        if (month > 12) {
-            return LocalDate.of(year, 12, 1).plusMonths(1);
-        } else if (month < 1) {
-            return LocalDate.of(year, 1, 1).minusMonths(1);
-        }
-        return LocalDate.of(year, month, 1);
+    public LocalDate getCalendarDate(Integer year, Integer month, Optional<String> step) {
+        if(step.isEmpty()){
+            return LocalDate.of(year, month, 1);
+        }else if (step.get().equals("next"))
+            return LocalDate.of(year, month, 1).plusMonths(1);
+        return LocalDate.of(year, month, 1).minusMonths(1);
     }
+
 
     public Days getDaysOfMonth(LocalDate localDate) {
         List<Integer> days = new ArrayList<>();
