@@ -16,10 +16,8 @@ public class CalendarService {
 
     private final TaskService taskService;
 
-    public LocalDate getCalendarDate(Integer year, Integer month, Optional<String> step) {
-        if(step.isEmpty()){
-            return LocalDate.of(year, month, 1);
-        }else if (step.get().equals("next"))
+    public LocalDate getCalendarDate(Integer year, Integer month, String step) {
+        if (step.equals("next"))
             return LocalDate.of(year, month, 1).plusMonths(1);
         return LocalDate.of(year, month, 1).minusMonths(1);
     }

@@ -1,5 +1,8 @@
 package com.example.demo.controller;
 
+import com.example.demo.model.dto.Days;
+import com.example.demo.service.CalendarService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -11,8 +14,10 @@ import java.time.LocalDateTime;
 
 @Controller
 @RequestMapping("/")
+@RequiredArgsConstructor
 public class HomeController {
 
+    private final CalendarService calendarService;
 
     @GetMapping()
     public ModelAndView getCalendar(ModelMap model){
