@@ -4,6 +4,7 @@ package com.example.demo.controller;
 import com.example.demo.model.dto.Days;
 import com.example.demo.service.CalendarService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;
@@ -18,7 +19,9 @@ public class CalendarController {
 
     private final CalendarService calendarService;
 
+    
     @GetMapping()
+    @ResponseStatus(HttpStatus.OK)
     public String getCalendar(@RequestParam("year")  Integer year, @RequestParam("month") Integer month, Model model){
           LocalDate date = calendarService.getCalendarDate(year,month);
           Days days = calendarService.getDaysOfMonth(date);
