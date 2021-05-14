@@ -1,8 +1,10 @@
 package com.example.demo.service;
 
+import com.example.demo.model.Step;
 import com.example.demo.model.dto.Days;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -16,9 +18,8 @@ public class CalendarService {
 
     private final TaskService taskService;
 
-    public LocalDate getCalendarDate(Integer year, Integer month, String step) {
-        if (step.equals("next"))
-            return LocalDate.of(year, month, 1).plusMonths(1);
+    public LocalDate getCalendarDate(Integer year, Integer month, Step step) {
+        if (step.equals(Step.NEXT)) return LocalDate.of(year, month, 1).plusMonths(1);
         return LocalDate.of(year, month, 1).minusMonths(1);
     }
 

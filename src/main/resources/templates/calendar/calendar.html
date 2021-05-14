@@ -167,9 +167,9 @@
 
     <nav aria-label="Page navigation example" >
         <ul class="pagination" style="position: relative">
-            <li  class="page-item-prev"><a class="page-link" th:href="@{/calendar(year = ${year},month = ${month}, step = 'prev')}">Previous</a></li>
+            <li  class="page-item-prev"><a class="page-link" th:href="@{/calendar(year = ${year},month = ${month}, step = 'PREVIOUS')}">Previous</a></li>
 
-            <li class="page-item-next"><a class="page-link" th:href="@{/calendar(year = ${year},month = ${month}, step = 'next')}">Next</a></li>
+            <li class="page-item-next"><a class="page-link" th:href="@{/calendar(year = ${year},month = ${month}, step = 'NEXT')}">Next</a></li>
 
         </ul>
     </nav>
